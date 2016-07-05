@@ -31,7 +31,7 @@ public class NumbersTest
       {
         num1 = fromroman(sub1);
       }
-      else if (sub1.contains("Α"))
+      else if (sub1.contains("Α") || sub1.contains("Β") || sub1.contains("Γ") || sub1.contains("Δ") || sub1.contains("Ε") || sub1.contains("ς") || sub1.contains("Ζ") || sub1.contains("Η") || sub1.contains("Θ") || sub1.contains("Ι") || sub1.contains("Κ") || sub1.contains("Λ") || sub1.contains("Μ") || sub1.contains("Ν") || sub1.contains("Ξ") || sub1.contains("Ο") || sub1.contains("Π") || sub1.contains("Q") || sub1.contains("Ρ") || sub1.contains("Σ") || sub1.contains("Τ") || sub1.contains("Υ") || sub1.contains("Φ") || sub1.contains("Χ") || sub1.contains("Υ") || sub1.contains("Ω") || sub1.contains("W"))
       {
         //num1 = fromgreek(sub1);
       }
@@ -43,6 +43,10 @@ public class NumbersTest
       if (sub2.contains("I") || sub2.contains("V") || sub2.contains("X") || sub2.contains("L") || sub2.contains("C") || sub2.contains("D"))
       {
         num2 = fromroman(sub2);
+      }
+      else if (sub2.contains("Α") || sub2.contains("Β") || sub2.contains("Γ") || sub2.contains("Δ") || sub2.contains("Ε") || sub2.contains("ς") || sub2.contains("Ζ") || sub2.contains("Η") || sub2.contains("Θ") || sub2.contains("Ι") || sub2.contains("Κ") || sub2.contains("Λ") || sub2.contains("Μ") || sub2.contains("Ν") || sub2.contains("Ξ") || sub2.contains("Ο") || sub2.contains("Π") || sub2.contains("Q") || sub2.contains("Ρ") || sub2.contains("Σ") || sub2.contains("Τ") || sub2.contains("Υ") || sub2.contains("Φ") || sub2.contains("Χ") || sub2.contains("Υ") || sub2.contains("Ω") || sub2.contains("W"))
+      {
+        //num2 = fromgreek(sub2);
       }
       else
       {
@@ -62,7 +66,7 @@ public class NumbersTest
       }
       System.out.printf("The result in Hindu-Arabic Numerals is: %d\n", ap);
       System.out.printf("The result in Roman Numerals is: %s\n", toroman(ap));
-      System.out.printf("The result in Greek Numerals is: \n");
+      //System.out.printf("The result in Greek Numerals is: %s\n", togreek(ap));
 
       System.out.println("Give an arithmitic expression of 2 numbers:");
       exp = input.nextLine();
@@ -241,15 +245,140 @@ public class NumbersTest
     {
       switch(sub.charAt(l))
       {
-        case 'Τ': num += 300;
+        case 'Α': num += 1;
+        break;
+        case 'Β': num += 2;
+        break;
+        case 'Γ': num += 3;
+        break;
+        case 'Γ': num += 3;
+        break;
+        case 'Δ': num += 4;
+        break;
+        case 'Ε': num += 5;
+        break;
+        case 'ς': num += 6;
+        break;
+        case 'Ζ': num += 7;
+        break;
+        case 'Η': num += 8;
+        break;
+        case 'Θ': num += 9;
+        break;
+        case 'Ι': num += 10;
+        break;
+        case 'Κ': num += 20;
+        break;
+        case 'Λ': num += 30;
+        break;
+        case 'Μ': num += 40;
+        break;
+        case 'Ν': num += 50;
+        break;
+        case 'Ξ': num += 60;
+        break;
+        case 'Ο': num += 70;
+        break;
+        case 'Π': num += 80;
+        break;
+        case 'Q': num += 90;
         break;
         case 'Ρ': num += 100;
         break;
-        case 'Α': num += 1;
+        case 'Σ': num += 200;
+        break;
+        case 'Τ': num += 300;
+        break;
+        case 'Y': num += 400;
+        break;
+        case 'Φ': num += 500;
+        break;
+        case 'Χ': num += 600;
+        break;
+        case 'Υ': num += 700;
+        break;
+        case 'Ω': num += 800;
+        break;
+        case 'W': num += 900;
         break;
       }
     }
     return num;
+  }
+
+  public static String togreek(int ap)
+  {
+    String part = "";
+    switch(ap/100)
+    {
+      case 0:;
+      break;
+      case 1: part += "Α";
+      break;
+      case 2: part += "Β";
+      break;
+      case 3: part += "Γ";
+      break;
+      case 4: part += "Δ";
+      break;
+      case 5: part += "Ε";
+      break;
+      case 6: part += "ς";
+      break;
+      case 7: part += "Ζ";
+      break;
+      case 8: part += "Η";
+      break;
+      case 9: part += "Θ";
+      break;
+    }
+    switch((ap/10)%10)
+    {
+      case 0:;
+      break;
+      case 1: part += "Ι";
+      break;
+      case 2: part += "Κ";
+      break;
+      case 3: part += "Λ";
+      break;
+      case 4: part += "Μ";
+      break;
+      case 5: part += "Ν";
+      break;
+      case 6: part += "Ξ";
+      break;
+      case 7: part += "Ο";
+      break;
+      case 8: part += "Π";
+      break;
+      case 9: part += "Q";
+      break;
+    }
+    switch(ap%10)
+    {
+      case 0:;
+      break;
+      case 1: part += "Ρ";
+      break;
+      case 2: part += "Σ";
+      break;
+      case 3: part += "Τ";
+      break;
+      case 4: part += "Υ";
+      break;
+      case 5: part += "Φ";
+      break;
+      case 6: part += "Χ";
+      break;
+      case 7: part += "Ψ";
+      break;
+      case 8: part += "Ω";
+      break;
+      case 9: part += "W";
+      break;
+    }
+    return part;
   }
   */
 }
