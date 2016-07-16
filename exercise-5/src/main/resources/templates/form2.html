@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tailwise</title>
+  <link rel="shortcut icon" type="image/x-icon" href="small-dog.png"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+  <body>
+    <div class="container">
+    <form action="#" th:action="@{/}" th:object="${personForm}" method="post"><div class="form-group">
+      <div class="form-group">
+        <label for="usr">Email:</label>
+        <input type="text" class="form-control" id="usr" th:field="*{email}" />
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>
+      </div>
+      <div class="form-group">
+        <label for="usr">Firstname:</label>
+        <input type="text" class="form-control" id="usr" th:field="*{name}" />
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Firstame Error</p>
+      </div>
+      <div class="form-group">
+        <label for="usr">Lastname:</label>
+        <input type="text" class="form-control" id="usr" th:field="*{surname}" />
+        <p th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Lastname Error</p>
+      </div>
+      <div class="form-group">
+        <label for="usr">Telephone:</label>
+        <input type="text" class="form-control" id="usr" th:field="*{tel}" />
+        <p th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}">Telephone Error</p>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+  </body>
+</html>
